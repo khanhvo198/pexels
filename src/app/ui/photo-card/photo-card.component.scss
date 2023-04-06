@@ -1,0 +1,23 @@
+:host {
+
+  & mat-card {
+    width: 500px;
+
+    & mat-card-header {
+      padding: 1rem;
+    }
+    & mat-card-content {
+      height: 400px;
+      position: relative;
+    }
+
+    & [mat-card-image] {
+      object-fit: cover;
+    }
+    & mat-card-actions {
+      padding: 1rem;
+    }
+  }
+
+
+}

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-random',
   template: `
-    <p>Random Work</p>
+    <app-photo-grids></app-photo-grids>
+    <p>In random</p>
   `,
   styles: []
 })

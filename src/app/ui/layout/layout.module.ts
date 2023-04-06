@@ -5,12 +5,11 @@ import { Route, RouterModule } from '@angular/router';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {SideNavModule} from "../side-nav/side-nav.module";
 import {TopBarModule} from "../top-bar/top-bar.module";
-import {HomeComponent} from "../../home/home.component";
-import {RandomComponent} from "../../random/random.component";
-
 const routes: Route[] = [
-  {path: '', component: HomeComponent},
-  {path: 'random', component: RandomComponent}
+  {path: '', component: LayoutComponent, children: [
+      {path: '', loadChildren: () => import('../../home/home.module').then(m => m.HomeModule)},
+      {path: 'random', loadChildren: () => import('../../random/random.module').then(m => m.RandomModule)}
+    ]},
 
 ];
 
