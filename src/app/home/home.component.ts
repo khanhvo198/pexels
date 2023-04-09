@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import { PexelsService } from '../services/pexels.service';
-import { Photo } from '../shared/data-access/pexels/pexels.model';
-import { HomeService } from './home.service';
-import { Observable } from 'rxjs';
-import { Pagination } from '../shared/data-access/pexels/paginatior.model';
 import { PageEvent } from '@angular/material/paginator';
-import { FormControl } from '@angular/forms';
 import { PhotoService } from '../services/photo.service';
 
 @Component({
