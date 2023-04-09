@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-top-bar',
   template: `
-    <mat-toolbar color="primary">
-      Image Gallery
-    </mat-toolbar>
+    <mat-toolbar color="primary">Image Gallery</mat-toolbar>
   `,
-  styles: [
-  ]
+  styles: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TopBarComponent {
-
-}
+export class TopBarComponent {}

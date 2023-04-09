@@ -1,4 +1,9 @@
-import { Component, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  Output,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 
@@ -19,6 +24,7 @@ import { debounceTime } from 'rxjs';
     </mat-form-field>
   `,
   styleUrls: ['./search.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {
   queryControl = new FormControl('');

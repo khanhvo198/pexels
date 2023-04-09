@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Photo} from "../../shared/data-access/pexels/pexels.model";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Photo } from '../../shared/data-access/pexels/pexels.model';
 
 @Component({
   selector: 'app-photo-card',
@@ -20,9 +20,9 @@ import {Photo} from "../../shared/data-access/pexels/pexels.model";
       </mat-card-actions>
     </mat-card>
   `,
-  styleUrls: ['photo-card.component.scss']
+  styleUrls: ['photo-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotoCardComponent {
   @Input() photo!: Photo;
-
 }

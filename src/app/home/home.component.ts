@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { PhotoService } from '../services/photo.service';
 
@@ -21,6 +21,7 @@ import { PhotoService } from '../services/photo.service';
     </ng-container>
   `,
   styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
   constructor(private photoService: PhotoService) {}

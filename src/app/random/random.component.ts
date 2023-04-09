@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -18,6 +18,7 @@ import { PageEvent } from '@angular/material/paginator';
     </ng-container>
   `,
   styleUrls: ['./random.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RandomComponent {
   constructor(private photoService: PhotoService) {}
