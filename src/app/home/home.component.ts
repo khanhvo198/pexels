@@ -39,6 +39,11 @@ export class HomeComponent {
     });
   }
   onQueryChanged(query: string | null) {
+    console.log(query);
+    if (query === null) {
+      this.photoService.setState({ page: 0 });
+      return;
+    }
     this.photoService.setQuery(String(query));
   }
 }
