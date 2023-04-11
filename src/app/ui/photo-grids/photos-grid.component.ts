@@ -1,7 +1,7 @@
+import { NgFor } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Photo } from '../../shared/data-access/pexels/pexels.model';
 import { PhotoCardComponent } from '../photo-card/photo-card.component';
-import { NgFor, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-photo-grids',

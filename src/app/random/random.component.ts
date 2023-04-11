@@ -1,13 +1,13 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { PhotoService } from '../services/photo.service';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { PhotoService } from '../services/photo.service';
 import { PhotosGridComponent } from '../ui/photo-grids/photos-grid.component';
-import {AsyncPipe, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-random',
   template: `
-    <ng-container *ngIf="(state$ | async) as state">
+    <ng-container *ngIf="state$ | async as state">
       <mat-paginator
         [length]="state.total"
         [pageSize]="15"

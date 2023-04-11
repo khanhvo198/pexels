@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 import { SideNavComponent } from '../side-nav/side-nav.component';
 import { TopBarComponent } from '../top-bar/top-bar.component';
-import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-layout',
   template: `

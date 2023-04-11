@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {MatToolbarModule} from "@angular/material/toolbar";
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,8 +9,6 @@ import {MatToolbarModule} from "@angular/material/toolbar";
   styles: [],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    MatToolbarModule
-  ]
+  imports: [MatToolbarModule],
 })
 export class TopBarComponent {}

@@ -1,10 +1,9 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { PhotoService } from '../services/photo.service';
-import { SearchComponent } from '../ui/search/search.component';
 import { PhotosGridComponent } from '../ui/photo-grids/photos-grid.component';
-import {AsyncPipe, CommonModule, NgIf} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import { SearchComponent } from '../ui/search/search.component';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +25,13 @@ import {HttpClientModule} from "@angular/common/http";
   `,
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [MatPaginatorModule, SearchComponent, PhotosGridComponent, AsyncPipe, NgIf],
+  imports: [
+    MatPaginatorModule,
+    SearchComponent,
+    PhotosGridComponent,
+    AsyncPipe,
+    NgIf,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HomeComponent {
