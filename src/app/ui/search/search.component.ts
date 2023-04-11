@@ -2,10 +2,11 @@ import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   Input,
   Output,
 } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NonNullableFormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -41,14 +42,11 @@ import { debounceTime } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {
-  queryControl = new FormControl('');
+  readonly queryControl = inject(NonNullableFormBuilder).control('');
 
   constructor() {}
-  @Input() defaultQuery: string = 'nature';
-  @Output() query = this.queryControl.valueChanges.pipe(debounceTime(250));
-
-  ngOnInit() {
-    this.defaultQuery = this.defaultQuery ? this.defaultQuery : 'nature';
-    this.queryControl.setValue(this.defaultQuery, { emitEvent: false });
+  @Input() set defaultQuery(value: string) {
+    this.queryControl.setValue(value, { emitEvent: false });
   }
+  @Output() query = this.queryControl.valueChanges.pipe(debounceTime(250));
 }
