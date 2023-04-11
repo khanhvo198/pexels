@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Photo } from '../../shared/data-access/pexels/pexels.model';
+import {MatCardModule} from "@angular/material/card";
+import {NgOptimizedImage} from "@angular/common";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'app-photo-card',
@@ -21,6 +25,13 @@ import { Photo } from '../../shared/data-access/pexels/pexels.model';
     </mat-card>
   `,
   styleUrls: ['photo-card.component.scss'],
+  standalone: true,
+  imports: [
+    MatCardModule,
+    NgOptimizedImage,
+    MatButtonModule,
+    MatIconModule
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotoCardComponent {

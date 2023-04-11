@@ -4,8 +4,13 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatInput, MatInputModule } from '@angular/material/input';
 import { debounceTime } from 'rxjs';
+import {NgIf} from "@angular/common";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-search',
@@ -24,6 +29,15 @@ import { debounceTime } from 'rxjs';
     </mat-form-field>
   `,
   styleUrls: ['./search.component.scss'],
+  standalone: true,
+  imports: [
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    NgIf,
+    MatButtonModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {

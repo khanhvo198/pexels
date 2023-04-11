@@ -2,7 +2,7 @@ import { Route } from '@angular/router';
 export const routes: Route[] = [
   {
     path: '',
-    loadChildren: () =>
-      import('./ui/layout/layout.module').then((m) => m.LayoutModule),
+    loadComponent: () => import('./ui/layout/layout.component'),
+    loadChildren: () => import('./ui/layout/layout.routes'),
   },
 ];

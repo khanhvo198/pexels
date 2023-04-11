@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Photo } from '../../shared/data-access/pexels/pexels.model';
+import { PhotoCardComponent } from '../photo-card/photo-card.component';
+import { NgFor, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-photo-grids',
@@ -12,6 +14,8 @@ import { Photo } from '../../shared/data-access/pexels/pexels.model';
     </div>
   `,
   styleUrls: ['photos-grid.component.scss'],
+  standalone: true,
+  imports: [PhotoCardComponent, NgFor],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotosGridComponent {

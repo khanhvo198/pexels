@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {MatListModule} from "@angular/material/list";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
   selector: 'app-side-nav',
@@ -10,6 +12,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     </mat-nav-list>
   `,
   styles: [],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    MatListModule,
+    RouterLink,
+    RouterLinkActive
+  ]
 })
 export class SideNavComponent {}

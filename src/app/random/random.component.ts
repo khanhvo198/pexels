@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { PhotosGridComponent } from '../ui/photo-grids/photos-grid.component';
+import {AsyncPipe, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-random',
   template: `
-    <ng-container *ngIf="state$ | async as state">
+    <ng-container *ngIf="(state$ | async) as state">
       <mat-paginator
         [length]="state.total"
         [pageSize]="15"
@@ -18,9 +20,11 @@ import { PageEvent } from '@angular/material/paginator';
     </ng-container>
   `,
   styleUrls: ['./random.component.scss'],
+  standalone: true,
+  imports: [MatPaginatorModule, PhotosGridComponent, NgIf, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RandomComponent {
+export default class RandomComponent {
   constructor(private photoService: PhotoService) {}
 
   state$ = this.photoService.state$;

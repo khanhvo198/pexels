@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { PhotoService } from '../services/photo.service';
+import { SearchComponent } from '../ui/search/search.component';
+import { PhotosGridComponent } from '../ui/photo-grids/photos-grid.component';
+import {AsyncPipe, CommonModule, NgIf} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-home',
@@ -21,9 +25,11 @@ import { PhotoService } from '../services/photo.service';
     </ng-container>
   `,
   styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [MatPaginatorModule, SearchComponent, PhotosGridComponent, AsyncPipe, NgIf],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent {
+export default class HomeComponent {
   constructor(private photoService: PhotoService) {}
 
   state$ = this.photoService.state$;
